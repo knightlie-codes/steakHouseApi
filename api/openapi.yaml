@@ -5,9 +5,9 @@ info:
   version: '1'
 servers:
   - url: https://steakhouseapi.xyz/info
-    description: Info API server
+    description: Website Info API Route
   - url: https://steakhouseapi.xyz/blockchain
-    description: Blockchain API server
+    description: Blockchain Info API Route
 paths:
   /api/all-tokens-by-volume:
     get:
