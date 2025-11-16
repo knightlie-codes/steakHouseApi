@@ -11,6 +11,8 @@ servers:
 paths:
   /api/all-tokens-by-volume:
     get:
+      x-accepts:
+          - application/json
       operationId: getAllTokensByVolume
       summary: Sorted by 24h volume with progress metric.
       parameters:
