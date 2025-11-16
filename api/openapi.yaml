@@ -5,14 +5,12 @@ info:
   version: '1'
 servers:
   - url: https://steakhouseapi.xyz/info
-    description: Website Info API Route
+    description: Website Info API Router
   - url: https://steakhouseapi.xyz/blockchain
     description: Blockchain Info API Route
 paths:
   /api/all-tokens-by-volume:
     get:
-      x-accepts:
-          - application/json
       operationId: getAllTokensByVolume
       summary: Sorted by 24h volume with progress metric.
       parameters:
@@ -301,13 +299,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  ok:
-                    type: boolean
-                  tx:
-                    type: object
-                    description: Transaction details
+                $ref: '#/components/schemas/BuySellCurveResponse'
         "400":
           description: Missing required fields
           content:
@@ -361,13 +353,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  ok:
-                    type: boolean
-                  tx:
-                    type: object
-                    description: Transaction details
+                $ref: '#/components/schemas/BuySellCurveResponse'
         "400":
           description: Missing required fields
           content:
@@ -1006,3 +992,11 @@ components:
             maxTx:
               type: string
               nullable: true
+    BuySellCurveResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        tx:
+          type: object
+          description: Transaction details
