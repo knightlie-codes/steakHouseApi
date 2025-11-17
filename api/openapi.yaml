@@ -549,15 +549,6 @@ paths:
                 isStealth:
                   type: boolean
                   description: Whether to use stealth deployment
-                creationFeeEth:
-                  type: string
-                  description: Creation fee in ETH (optional, defaults backend-side)
-                gasLimit:
-                  type: integer
-                  description: Gas limit to use for the transaction (optional)
-                gasMultiplier:
-                  type: integer
-                  description: Multiplier applied to base gas price (optional)
       responses:
         "200":
           description: Unsigned transaction for creating a Super Simple token
@@ -649,15 +640,6 @@ paths:
                 isStealth:
                   type: boolean
                   description: Whether to use stealth deployment
-                creationFeeEth:
-                  type: string
-                  description: Creation fee in ETH (optional, defaults backend-side)
-                gasLimit:
-                  type: integer
-                  description: Gas limit to use for the transaction (optional)
-                gasMultiplier:
-                  type: integer
-                  description: Multiplier applied to base gas price (optional)
       responses:
         "200":
           description: Unsigned transaction for creating a Zero Simple token
@@ -769,15 +751,6 @@ paths:
                 useStealth:
                   type: boolean
                   description: Whether to use stealth deployment
-                creationFeeEth:
-                  type: string
-                  description: Creation fee in ETH (optional, defaults backend-side)
-                gasLimit:
-                  type: integer
-                  description: Gas limit to use for the transaction (optional)
-                gasMultiplier:
-                  type: integer
-                  description: Multiplier applied to base gas price (optional)
       responses:
         "200":
           description: Unsigned transaction for creating a Basic curve token
@@ -917,15 +890,6 @@ paths:
                 useStealth:
                   type: boolean
                   description: Whether to use stealth deployment
-                creationFeeEth:
-                  type: string
-                  description: Creation fee in ETH (optional, defaults backend-side)
-                gasLimit:
-                  type: integer
-                  description: Gas limit to use for the transaction (optional)
-                gasMultiplier:
-                  type: integer
-                  description: Multiplier applied to base gas price (optional)
       responses:
         "200":
           description: Unsigned transaction for creating an Advanced curve token
