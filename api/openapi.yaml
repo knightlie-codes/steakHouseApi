@@ -1114,7 +1114,7 @@ components:
           nullable: true
         is_stealth:
           type: boolean
-          nullable: true
+          nullable: false
         is_super_simple:
           type: boolean
           nullable: true
@@ -1351,7 +1351,7 @@ components:
           nullable: true
         is_stealth:
           type: boolean
-          nullable: true
+          nullable: false
         start_time:
           type: integer
           nullable: true
