@@ -311,9 +311,6 @@ paths:
                 tax_wallet:
                   type: string
                   description: Address of the tax wallet
-                steakhouse_treasury_basic:
-                  type: string
-                  description: Address of the Steakhouse treasury for basic tokens
                 image_url:
                   type: string
                   format: uri
@@ -1079,9 +1076,6 @@ components:
         tax_wallet:
           type: string
           nullable: true
-        steakhouse_treasury_basic:
-          type: string
-          nullable: true
         curve_starting_tax:
           type: string
           nullable: true
@@ -1458,9 +1452,6 @@ components:
           nullable: true
         curve_max_wallet_duration:
           type: integer
-          nullable: true
-        steakhouse_treasury_basic:
-          type: string
           nullable: true
     LastTrade:
       type: object
