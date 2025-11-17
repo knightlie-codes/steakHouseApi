@@ -16,7 +16,7 @@ paths:
       parameters:
         - name: chain_id
           in: query
-          required: true
+          required: false
           schema:
             type: integer
             example: 11155111
@@ -70,7 +70,7 @@ paths:
   /api/filtered/mcap:
     get:
       operationId: getFilteredTokensByMarketCap
-      summary: Returns tokens inside predefined market cap boundaries.
+      summary: Returns tokens sorted by market cap.
       parameters:
         - name: page
           in: query
@@ -102,7 +102,7 @@ paths:
   /api/filtered/recent:
     get:
       operationId: getFilteredRecentTokens
-      summary: Returns recently created tokens sorted by creation timestamp.
+      summary: Returns most recently created tokens.
       parameters:
         - name: page
           in: query
@@ -128,7 +128,7 @@ paths:
   /api/trending:
     get:
       operationId: getTrendingTokens
-      summary: Returns the top 15 trending tokens.
+      summary: Returns list of trending tokens.
       parameters:
         - name: chain_id
           in: query
@@ -148,7 +148,7 @@ paths:
   /api/token/{address}/is_real:
     get:
       operationId: isTokenReal
-      summary: Returns true if the token exists in the Steakhouse token table.
+      summary: Check if real steakhouse.finance token.
       parameters:
         - name: address
           in: path
@@ -168,7 +168,7 @@ paths:
   /api/token/{address}:
     get:
       operationId: getTokenSnapshot
-      summary: Returns token metadata, cached stats, latest price, and last trade.
+      summary: Returns token metadata, latest price, and last trade.
       parameters:
         - name: address
           in: path
@@ -198,7 +198,7 @@ paths:
   /limits/{token}:
     get:
       operationId: getLimits
-      summary: Returns limit settings and buy-quote calculations.
+      summary: Returns trade limits and quote calculations.
       parameters:
         - name: token
           in: path
@@ -213,7 +213,7 @@ paths:
         - ApiKeyAuth: []
       responses:
         "200":
-          description: Limit settings and buy-quote calculations
+          description: Limits and quote calculations
           content:
             application/json:
               schema:
@@ -480,7 +480,7 @@ paths:
   /create/superSimpleToken:
     post:
       operationId: createSuperSimpleToken
-      summary: Creates an unsigned transaction to deploy a Super Simple token.
+      summary: Creates Txn to deploy a Super Simple token.
       servers:
         - url: https://steakhouseapi.xyz/blockchain
           description: Blockchain API server
@@ -588,7 +588,7 @@ paths:
   /create/zeroSimpleToken:
     post:
       operationId: createZeroSimpleToken
-      summary: Creates an unsigned transaction to deploy a Zero Simple token.
+      summary: Creates Txn to deploy a Zero Simple token.
       servers:
         - url: https://steakhouseapi.xyz/blockchain
           description: Blockchain API server
@@ -688,7 +688,7 @@ paths:
   /create/basicToken:
     post:
       operationId: createBasicToken
-      summary: Creates an unsigned transaction to deploy a Basic curve token.
+      summary: Creates Txn to deploy a Basic curve token.
       servers:
         - url: https://steakhouseapi.xyz/blockchain
           description: Blockchain API server
@@ -808,7 +808,7 @@ paths:
   /create/advancedToken:
     post:
       operationId: createAdvancedToken
-      summary: Creates an unsigned transaction to deploy an Advanced curve token.
+      summary: Creates Txn to deploy an Advanced curve token.
       servers:
         - url: https://steakhouseapi.xyz/blockchain
           description: Blockchain API server
@@ -956,7 +956,7 @@ paths:
   /buyCurve:
     post:
       operationId: buyCurve
-      summary: Creates an unsigned transaction to buy tokens via curve.
+      summary: Creates Txn to buy tokens via curve.
       servers:
         - url: https://steakhouseapi.xyz/blockchain
           description: Blockchain API server
@@ -1011,7 +1011,7 @@ paths:
   /sellCurve:
     post:
       operationId: sellCurve
-      summary: Creates an unsigned transaction to sell tokens via curve.
+      summary: Creates Txn to sell tokens via curve.
       servers:
         - url: https://steakhouseapi.xyz/blockchain
           description: Blockchain API server
