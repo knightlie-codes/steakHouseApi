@@ -12,7 +12,7 @@ paths:
   /api/all-tokens-by-volume:
     get:
       operationId: getAllTokensByVolume
-      summary: Sorted by 24h volume with progress metric.
+      summary: Get tokens sorted by 24h volume.
       parameters:
         - name: chain_id
           in: query
