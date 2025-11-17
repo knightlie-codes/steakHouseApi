@@ -4,12 +4,10 @@ info:
   description: API to get filtered and specific info on steakHouse.finance tokens and onchain token info before bonding
   version: '1.2'
 servers:
-  - url: https://steakhouseapi.xyz/info
-    description: Info API server
-  - url: https://steakhouseapi.xyz/blockchain
-    description: Blockchain API server
+  - url: https://steakhouseapi.xyz
+    description: Base API URL
 paths:
-  /api/all-tokens-by-volume:
+  /info/api/all-tokens-by-volume:
     get:
       operationId: getAllTokensByVolume
       summary: Get tokens sorted by 24h volume.
@@ -35,7 +33,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TokensByVolumeResponse'
-  /api/filtered/tax:
+  /info/api/filtered/tax:
     get:
       operationId: getFilteredTokensByTax
       summary: Returns tokens sorted by tax rate within configured bounds.
@@ -67,7 +65,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FilteredTaxResponse'
-  /api/filtered/mcap:
+  /info/api/filtered/mcap:
     get:
       operationId: getFilteredTokensByMarketCap
       summary: Returns tokens sorted by market cap.
@@ -99,7 +97,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FilteredMcapResponse'
-  /api/filtered/recent:
+  /info/api/filtered/recent:
     get:
       operationId: getFilteredRecentTokens
       summary: Returns most recently created tokens.
@@ -125,7 +123,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FilteredRecentResponse'
-  /api/trending:
+  /info/api/trending:
     get:
       operationId: getTrendingTokens
       summary: Returns list of trending tokens.
@@ -145,7 +143,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/TrendingTokensResponse'
-  /api/token/{address}/is_real:
+  /info/api/token/{address}/is_real:
     get:
       operationId: isTokenReal
       summary: Check if real steakhouse.finance token.
@@ -165,7 +163,7 @@ paths:
             application/json:
               schema:
                 type: boolean
-  /api/token/{address}:
+  /info/api/token/{address}:
     get:
       operationId: getTokenSnapshot
       summary: Returns token metadata, latest price, and last trade.
@@ -195,7 +193,7 @@ paths:
                   error:
                     type: string
                     example: Not Found
-  /limits/{token}:
+  /blockchain/limits/{token}:
     get:
       operationId: getLimits
       summary: Returns trade limits and quote calculations.
@@ -207,7 +205,7 @@ paths:
             type: string
             example: 0xTOKEN
       servers:
-        - url: https://steakhouseapi.xyz/blockchain
+        - url: https://steakhouseapi.xyz
           description: Blockchain API server
       security:
         - ApiKeyAuth: []
@@ -218,7 +216,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/LimitsResponse'
-  /maxWallet/{token}:
+  /blockchain/maxWallet/{token}:
     get:
       operationId: getMaxWalletQuote
       summary: Returns only the maxWallet quote.
@@ -230,7 +228,7 @@ paths:
             type: string
             example: 0xTOKEN
       servers:
-        - url: https://steakhouseapi.xyz/blockchain
+        - url: https://steakhouseapi.xyz
           description: Blockchain API server
       security:
         - ApiKeyAuth: []
@@ -241,7 +239,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MaxWalletQuoteResponse'
-  /maxTx/{token}:
+  /blockchain/maxTx/{token}:
     get:
       operationId: getMaxTxQuote
       summary: Returns only the maxTx quote.
@@ -253,7 +251,7 @@ paths:
             type: string
             example: 0xTOKEN
       servers:
-        - url: https://steakhouseapi.xyz/blockchain
+        - url: https://steakhouseapi.xyz
           description: Blockchain API server
       security:
         - ApiKeyAuth: []
@@ -265,14 +263,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/MaxTxQuoteResponse'
   
-  /registerToken:
+  /blockchain/registerToken:
     post:
       operationId: registerToken
       summary: Registers a token in Steakhouse storage after on-chain validation.
       description: >
         Creating tokens via API will require registery for your new virtual token to be shown and tradeable on steakhouse.finance site. Use this endpoint to register, you can include description and logo etc.. to be shown on your token page.
       servers:
-        - url: https://steakhouseapi.xyz/blockchain
+        - url: https://steakhouseapi.xyz
           description: Steakhouse API server
       security:
         - ApiKeyAuth: []
@@ -477,12 +475,12 @@ paths:
                   details:
                     type: string
 
-  /create/superSimpleToken:
+  /blockchain/create/superSimpleToken:
     post:
       operationId: createSuperSimpleToken
       summary: Creates Txn to deploy a Super Simple token.
       servers:
-        - url: https://steakhouseapi.xyz/blockchain
+        - url: https://steakhouseapi.xyz
           description: Blockchain API server
       security:
         - ApiKeyAuth: []
@@ -585,12 +583,12 @@ paths:
                 properties:
                   error:
                     type: string
-  /create/zeroSimpleToken:
+  /blockchain/create/zeroSimpleToken:
     post:
       operationId: createZeroSimpleToken
       summary: Creates Txn to deploy a Zero Simple token.
       servers:
-        - url: https://steakhouseapi.xyz/blockchain
+        - url: https://steakhouseapi.xyz
           description: Blockchain API server
       security:
         - ApiKeyAuth: []
@@ -685,12 +683,12 @@ paths:
                 properties:
                   error:
                     type: string
-  /create/basicToken:
+  /blockchain/create/basicToken:
     post:
       operationId: createBasicToken
       summary: Creates Txn to deploy a Basic curve token.
       servers:
-        - url: https://steakhouseapi.xyz/blockchain
+        - url: https://steakhouseapi.xyz
           description: Blockchain API server
       security:
         - ApiKeyAuth: []
@@ -805,12 +803,12 @@ paths:
                 properties:
                   error:
                     type: string
-  /create/advancedToken:
+  /blockchain/create/advancedToken:
     post:
       operationId: createAdvancedToken
       summary: Creates Txn to deploy an Advanced curve token.
       servers:
-        - url: https://steakhouseapi.xyz/blockchain
+        - url: https://steakhouseapi.xyz
           description: Blockchain API server
       security:
         - ApiKeyAuth: []
@@ -953,12 +951,12 @@ paths:
                 properties:
                   error:
                     type: string
-  /buyCurve:
+  /blockchain/buyCurve:
     post:
       operationId: buyCurve
       summary: Creates Txn to buy tokens via curve.
       servers:
-        - url: https://steakhouseapi.xyz/blockchain
+        - url: https://steakhouseapi.xyz
           description: Blockchain API server
       security:
         - ApiKeyAuth: []
@@ -1008,12 +1006,12 @@ paths:
                   error:
                     type: string
   
-  /sellCurve:
+  /blockchain/sellCurve:
     post:
       operationId: sellCurve
       summary: Creates Txn to sell tokens via curve.
       servers:
-        - url: https://steakhouseapi.xyz/blockchain
+        - url: https://steakhouseapi.xyz
           description: Blockchain API server
       security:
         - ApiKeyAuth: []
