@@ -282,10 +282,14 @@ paths:
               type: object
               required:
                 - token_address
+                - chain_id
               properties:
                 token_address:
                   type: string
                   description: Lowercased address of the token to register
+                chain_id:
+                  type: int
+                  description: chain ID of token deployed (ETH: 1, BSC: 56, BASE: 8453, ARB: 42161)
                 token_choice:
                   type: string
                   description: Optional token type indicator (overrides is_advanced / is_super_simple / is_zero_simple)
