@@ -204,6 +204,12 @@ paths:
           schema:
             type: string
             example: 0xTOKEN
+        - name: chainId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
       servers:
         - url: https://steakhouseapi.xyz
           description: Blockchain API server
@@ -221,6 +227,12 @@ paths:
       operationId: getMaxWalletQuote
       summary: Returns only the maxWallet quote.
       parameters:
+        - name: chainId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
         - name: token
           in: path
           required: true
@@ -244,6 +256,12 @@ paths:
       operationId: getMaxTxQuote
       summary: Returns only the maxTx quote.
       parameters:
+        - name: chainId
+          in: path
+          required: true
+          schema:
+            type: integer
+            example: 1
         - name: token
           in: path
           required: true
