@@ -505,7 +505,11 @@ paths:
                 - finalTaxRate
                 - lpLockDuration
                 - startTime
+                - chainId
               properties:
+                chainID:
+                  type: int
+                  description: (ETH: 1, BSC: 56, BASE: 8453, ARB: 42161)
                 walletAddress:
                   type: string
                   description: Wallet address that will send the transaction
@@ -603,7 +607,11 @@ paths:
                 - finalTaxRate
                 - lpLockDuration
                 - startTime
+                - chainId
               properties:
+                chainID:
+                  type: int
+                  description: (ETH: 1, BSC: 56, BASE: 8453, ARB: 42161)
                 walletAddress:
                   type: string
                   description: Wallet address that will send the transaction
@@ -700,7 +708,11 @@ paths:
                 - curveWalletInterval
                 - curveMaxTx
                 - curveTxInterval
+                - chainID
               properties:
+                chainID:
+                  type: int
+                  description: (ETH: 1, BSC: 56, BASE: 8453, ARB: 42161)
                 walletAddress:
                   type: string
                   description: Wallet address that will send the transaction
@@ -819,7 +831,11 @@ paths:
                 - maxTxStep
                 - maxTxInterval
                 - limitRemovalTime
+                - chainId
               properties:
+                chainID:
+                  type: int
+                  description: (ETH: 1, BSC: 56, BASE: 8453, ARB: 42161)
                 walletAddress:
                   type: string
                   description: Wallet address that will send the transaction
@@ -940,7 +956,11 @@ paths:
                 - tokenAddress
                 - buyAmount
                 - walletAddress
+                - chainId
               properties:
+                chainID:
+                  type: int
+                  description: (ETH: 1, BSC: 56, BASE: 8453, ARB: 42161)
                 tokenAddress:
                   type: string
                   description: Address of the token to buy
@@ -995,7 +1015,11 @@ paths:
                 - tokenAddress
                 - sellAmount
                 - walletAddress
+                - chainID
               properties:
+                chainID:
+                  type: int
+                  description: (ETH: 1, BSC: 56, BASE: 8453, ARB: 42161)
                 tokenAddress:
                   type: string
                   description: Address of the token to sell
