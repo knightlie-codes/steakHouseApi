@@ -289,7 +289,7 @@ paths:
                   description: Lowercased address of the token to register
                 chain_id:
                   type: integer
-                  description: chain ID of token deployed (ETH: 1, BSC: 56, BASE: 8453, ARB: 42161)
+                  description: chain ID of token deployed ETH 1, BSC 56, BASE 8453, ARB 42161
                 token_choice:
                   type: string
                   description: Optional token type indicator (overrides is_advanced / is_super_simple / is_zero_simple)
@@ -506,7 +506,7 @@ paths:
               properties:
                 chainId:
                   type: integer
-                  description: (ETH: 1, BSC: 56, BASE: 8453, ARB: 42161)
+                  description: ETH 1, BSC 56, BASE 8453, ARB 42161
                 walletAddress:
                   type: string
                   description: Wallet address that will send the transaction
@@ -608,7 +608,7 @@ paths:
               properties:
                 chainId:
                   type: integer
-                  description: (ETH: 1, BSC: 56, BASE: 8453, ARB: 42161)
+                  description: ETH 1, BSC 56, BASE 8453, ARB 42161
                 walletAddress:
                   type: string
                   description: Wallet address that will send the transaction
@@ -709,7 +709,7 @@ paths:
               properties:
                 chainId:
                   type: integer
-                  description: (ETH: 1, BSC: 56, BASE: 8453, ARB: 42161)
+                  description: ETH 1, BSC 56, BASE 8453, ARB 42161
                 walletAddress:
                   type: string
                   description: Wallet address that will send the transaction
@@ -832,7 +832,7 @@ paths:
               properties:
                 chainId:
                   type: integer
-                  description: (ETH: 1, BSC: 56, BASE: 8453, ARB: 42161)
+                  description: ETH 1, BSC 56, BASE 8453, ARB 42161
                 walletAddress:
                   type: string
                   description: Wallet address that will send the transaction
@@ -957,7 +957,7 @@ paths:
               properties:
                 chainID:
                   type: int
-                  description: (ETH: 1, BSC: 56, BASE: 8453, ARB: 42161)
+                  description: ETH 1, BSC 56, BASE 8453, ARB 42161
                 tokenAddress:
                   type: string
                   description: Address of the token to buy
@@ -1016,7 +1016,7 @@ paths:
               properties:
                 chainID:
                   type: int
-                  description: (ETH: 1, BSC: 56, BASE: 8453, ARB: 42161)
+                  description: ETH 1, BSC 56, BASE 8453, ARB 42161
                 tokenAddress:
                   type: string
                   description: Address of the token to sell
