@@ -288,7 +288,7 @@ paths:
                   type: string
                   description: Lowercased address of the token to register
                 chain_id:
-                  type: int
+                  type: integer
                   description: chain ID of token deployed (ETH: 1, BSC: 56, BASE: 8453, ARB: 42161)
                 token_choice:
                   type: string
@@ -327,9 +327,6 @@ paths:
                   type: string
                   format: uri
                   description: Token audio/MP3 URL (must be http(s))
-                chain_id:
-                  type: integer
-                  description: EVM chain ID (defaults to 11155111 if omitted)
                 name:
                   type: string
                   description: Token name
@@ -507,8 +504,8 @@ paths:
                 - startTime
                 - chainId
               properties:
-                chainID:
-                  type: int
+                chainId:
+                  type: integer
                   description: (ETH: 1, BSC: 56, BASE: 8453, ARB: 42161)
                 walletAddress:
                   type: string
@@ -597,6 +594,7 @@ paths:
             schema:
               type: object
               required:
+                - chainId
                 - walletAddress
                 - creatorAddress
                 - tokenName
@@ -607,10 +605,9 @@ paths:
                 - finalTaxRate
                 - lpLockDuration
                 - startTime
-                - chainId
               properties:
-                chainID:
-                  type: int
+                chainId:
+                  type: integer
                   description: (ETH: 1, BSC: 56, BASE: 8453, ARB: 42161)
                 walletAddress:
                   type: string
@@ -693,6 +690,7 @@ paths:
             schema:
               type: object
               required:
+                - chainId
                 - walletAddress
                 - tokenName
                 - tokenSymbol
@@ -708,10 +706,9 @@ paths:
                 - curveWalletInterval
                 - curveMaxTx
                 - curveTxInterval
-                - chainID
               properties:
-                chainID:
-                  type: int
+                chainId:
+                  type: integer
                   description: (ETH: 1, BSC: 56, BASE: 8453, ARB: 42161)
                 walletAddress:
                   type: string
@@ -833,8 +830,8 @@ paths:
                 - limitRemovalTime
                 - chainId
               properties:
-                chainID:
-                  type: int
+                chainId:
+                  type: integer
                   description: (ETH: 1, BSC: 56, BASE: 8453, ARB: 42161)
                 walletAddress:
                   type: string
