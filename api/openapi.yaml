@@ -956,7 +956,7 @@ paths:
                 - chainId
               properties:
                 chainID:
-                  type: int
+                  type: integer
                   description: ETH 1, BSC 56, BASE 8453, ARB 42161
                 tokenAddress:
                   type: string
@@ -1015,7 +1015,7 @@ paths:
                 - chainID
               properties:
                 chainID:
-                  type: int
+                  type: integer
                   description: ETH 1, BSC 56, BASE 8453, ARB 42161
                 tokenAddress:
                   type: string
